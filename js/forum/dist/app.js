@@ -29874,7 +29874,7 @@ System.register('flarum/initializers/routes', ['flarum/components/IndexPage', 'f
      */
     app.route.discussion = function (discussion, near) {
       return app.route(near && near !== 1 ? 'discussion.near' : 'discussion', {
-        id: discussion.id() + '-' + discussion.slug(),
+        id: discussion.id() + (discussion.slug().trim() ? '-' + discussion.slug() : ''),
         near: near && near !== 1 ? near : undefined
       });
     };
@@ -32711,7 +32711,7 @@ System.register('flarum/utils/string', [], function (_export, _context) {
   _export('truncate', truncate);
 
   function slug(string) {
-    return string.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/-$|^-/g, '') || '-';
+    return string.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/-$|^-/g, '');
   }
 
   /**

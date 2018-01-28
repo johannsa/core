@@ -23797,7 +23797,7 @@ System.register('flarum/utils/string', [], function (_export, _context) {
   _export('truncate', truncate);
 
   function slug(string) {
-    return string.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/-$|^-/g, '') || '-';
+    return string.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/-$|^-/g, '');
   }
 
   /**
