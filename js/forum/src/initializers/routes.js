@@ -33,9 +33,10 @@ export default function(app) {
    * @param {Integer} [near]
    * @return {String}
    */
-  app.route.discussion = (discussion, near) => {
+  app.route.discussion = function (discussion, near) {
+    const slug = discussion.slug();
     return app.route(near && near !== 1 ? 'discussion.near' : 'discussion', {
-      id: discussion.id() + (discussion.slug().trim() ? '-' + discussion.slug() : ''),
+      id: discussion.id() + (slug.trim() ? '-' + slug : ''),
       near: near && near !== 1 ? near : undefined
     });
   };

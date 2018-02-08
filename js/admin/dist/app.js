@@ -3038,7 +3038,7 @@ exports.System = System;
 	}
 
 	if( m.attrs ) m.attrs.bidi = bidi
-	
+
 	m.bidi = bidi
 
 	return bidi
@@ -16616,7 +16616,7 @@ return jQuery;
         left: o.left,
         top: o.top
       })
-        
+
       if (target) {
         target.insertBefore(el, target.firstChild||null)
       }

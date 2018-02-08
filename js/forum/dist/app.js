@@ -3038,7 +3038,7 @@ exports.System = System;
 	}
 
 	if( m.attrs ) m.attrs.bidi = bidi
-	
+
 	m.bidi = bidi
 
 	return bidi
@@ -17427,7 +17427,7 @@ void 0)||"<a href='"+a+"'"+f+">"+a+"</a>";return""+b+c})}}).call(this);
         left: o.left,
         top: o.top
       })
-        
+
       if (target) {
         target.insertBefore(el, target.firstChild||null)
       }
@@ -29873,8 +29873,9 @@ System.register('flarum/initializers/routes', ['flarum/components/IndexPage', 'f
      * @return {String}
      */
     app.route.discussion = function (discussion, near) {
+      const slug = discussion.slug();
       return app.route(near && near !== 1 ? 'discussion.near' : 'discussion', {
-        id: discussion.id() + (discussion.slug().trim() ? '-' + discussion.slug() : ''),
+        id: discussion.id() + (slug.trim() ? '-' + slug : ''),
         near: near && near !== 1 ? near : undefined
       });
     };
